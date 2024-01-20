@@ -6,6 +6,6 @@ layout: base.html
 
 This is a mixture of a Today I Learned and linkblog.
 
-{% for post in collections.post %}
-  - [{{ post.data.title }}]({{ post.url }})
+{% for post in collections.post reversed %}
+  - {{post.data.date | date: "%Y-%m-%d"}} [{{ post.data.title }}]({{ post.url }})
 {% endfor %}

@@ -1,9 +1,9 @@
 ---
 title: My First Post
-date: 2024-01-18
+date: 2024-01-13
 tags: post
 layout: post.html
 ---
 
 
-This is a sample lol.
+This is just to check if this works.
