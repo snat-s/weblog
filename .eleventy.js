@@ -1,16 +1,39 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
-module.exports = function (eleventyConfig) {
-  
-  eleventyConfig.addPassthroughCopy("src/assets");
+export default function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("**/*.jpg");
   eleventyConfig.addPassthroughCopy("**/*.png");
   eleventyConfig.addPassthroughCopy("**/*.gif");
   eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    return collectionApi.getFilteredByTag("post");
+  });
 
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "rss",
+    outputPath: "/feed.xml",
+    collection: "posts",
+    collection: {
+      name: "posts",
+      limit: 100,
+    },
+    metadata: {
+      language: "en",
+      title: "snats' weblog",
+      subtitle:
+        "a weblog for interesting stuff and short rambles on the internet.",
+      base: "https://weblog.snats.xyz/",
+      author: {
+        name: "snats",
+      },
+    },
+  });
   return {
-		dir: {
-			input: "src"
-		}
-	}
-};
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes",
+    },
+  };
+}

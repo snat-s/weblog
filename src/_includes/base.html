@@ -1,23 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="/feed.xml"
+            title="RSS Feed"
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed" />
-
-    <title>Weblog of snats</title>
-</head>
-
-<body>
-    <main>
-        {{ content }}
-    </main>
-    <footer>
-        by snats
-        <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-    </footer>
-</body>
-
+        <title>Weblog of snats</title>
+    </head>
+    <script
+        data-goatcounter="https://weblogsnats.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+    ></script>
+    <body>
+        <main>{{ content }}</main>
+        <footer>
+            by snats
+            <p>
+                This work is licensed under a
+                <a
+                    rel="license"
+                    href="http://creativecommons.org/licenses/by/4.0/"
+                    >Creative Commons Attribution 4.0 International License</a
+                >.
+            </p>
+        </footer>
+    </body>
 </html>
