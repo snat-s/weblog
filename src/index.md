@@ -11,6 +11,7 @@ pagination:
 This is a mixture of a Today I Learned and a Linkblog. For longer blogposts, I
 normally use the other [blog](https://snats.xyz/pages/articles.html).
 <br>
+<br>
 Page {{ pagination.pageNumber | plus: 1 }} of {{ pagination.pages.length }}
 
 {% for post in posts %}
